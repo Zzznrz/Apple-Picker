@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +257,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05814a7273a604659a2deca86bd68062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ApplePicker
+  basketPrefab: {fileID: 1561162137906161649, guid: f6ceeb044475d47a68206429fabaf173, type: 3}
+  numBaskets: 3
+  basketBottomY: -14
+  basketSpacingY: 2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
