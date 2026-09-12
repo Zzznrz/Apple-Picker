@@ -187,10 +187,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   applePrefab: {fileID: 3452781352813647434, guid: 6de78928fcb1b45ea98a6a6a3c7d4cb5, type: 3}
+  poisonApplePrefab: {fileID: 3452781352813647434, guid: 004d443a7f1bc4658b3cf6c5cc6f03e0, type: 3}
   speed: 10
   leftAndRightEdge: 24
   changeDirChance: 0.02
   appleDropDelay: 1
+  poisonChance: 0.15
 --- !u!1 &3845024049458221242
 GameObject:
   m_ObjectHideFlags: 0

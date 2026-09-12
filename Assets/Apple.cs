@@ -10,12 +10,15 @@ public class Apple : MonoBehaviour
     {
         if ( transform.position.y < bottonY )
         {
-            Destroy( this.gameObject );
+            if ( gameObject.CompareTag("Apple") )
+            {
+                // Get a reference to the ApplePicker component of Main Camera
+                ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+                // Call the public AppleMissed() method of apScript
+                apScript.AppleMissed();
+            }
 
-            // Get a reference to the ApplePicker component of Main Camera
-            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
-            // Call the public AppleMissed() method of apScript
-            apScript.AppleMissed();
+            Destroy( this.gameObject );
         }
     }
 }

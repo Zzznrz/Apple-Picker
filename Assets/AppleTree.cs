@@ -7,6 +7,7 @@ public class AppleTree : MonoBehaviour
    [Header("Inscribed")]
    // Prefab for instantiating apples
    public GameObject applePrefab;
+   public GameObject poisonApplePrefab;
 
    // Speed at which the AppleTree moves
    public float speed = 1f;
@@ -20,6 +21,9 @@ public class AppleTree : MonoBehaviour
    // Seconds between Apples instantiations
    public float appleDropDelay = 1f;
 
+   [Range(0f, 1f)]
+   public float poisonChance = 0.15f;
+
    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +33,18 @@ public class AppleTree : MonoBehaviour
 
     void DropApple()
     {
-        GameObject apple = Instantiate<GameObject>( applePrefab );
+        GameObject prefabToSpawn;
+
+        if (Random.value < poisonChance)
+        {
+            prefabToSpawn = poisonApplePrefab;
+        }
+        else
+        {
+            prefabToSpawn = applePrefab;
+        }
+
+        GameObject apple = Instantiate<GameObject>( prefabToSpawn );
         apple.transform.position = transform.position;
         Invoke( "DropApple", appleDropDelay);
     }
