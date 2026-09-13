@@ -24,6 +24,8 @@ public class AppleTree : MonoBehaviour
    [Range(0f, 1f)]
    public float poisonChance = 0.15f;
 
+   private bool lastAppleWasPoison = false;
+
    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,13 +37,15 @@ public class AppleTree : MonoBehaviour
     {
         GameObject prefabToSpawn;
 
-        if (Random.value < poisonChance)
+        if (!lastAppleWasPoison && Random.value < poisonChance)
         {
             prefabToSpawn = poisonApplePrefab;
+            lastAppleWasPoison = true;
         }
         else
         {
             prefabToSpawn = applePrefab;
+            lastAppleWasPoison = false;
         }
 
         GameObject apple = Instantiate<GameObject>( prefabToSpawn );
