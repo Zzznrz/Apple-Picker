@@ -10,7 +10,7 @@ public class Apple : MonoBehaviour
     {
         if ( transform.position.y < bottonY )
         {
-            if ( gameObject.CompareTag("Apple") )
+            if ( gameObject.CompareTag("Apple") || gameObject.CompareTag("GoldApple"))
             {
                 // Get a reference to the ApplePicker component of Main Camera
                 ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();

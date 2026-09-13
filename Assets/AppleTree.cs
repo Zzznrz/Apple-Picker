@@ -15,6 +15,7 @@ public class AppleTree : MonoBehaviour
    // Prefab for instantiating apples
    public GameObject applePrefab;
    public GameObject poisonApplePrefab;
+   public GameObject goldApplePrefab;
 
    public List<DifficultyLevel> difficultyLevels;
 
@@ -33,6 +34,8 @@ public class AppleTree : MonoBehaviour
 
    [Range(0f, 1f)]
    public float poisonChance = 0.15f;
+   [Range(0f, 1f)]
+   public float goldChange = 0.1f;
 
    // Current movement speed
    private float speed;
@@ -58,10 +61,17 @@ public class AppleTree : MonoBehaviour
     {
         GameObject prefabToSpawn;
 
-        if (!lastAppleWasPoison && Random.value < poisonChance)
+        float randomValue = Random.value;
+
+        if (!lastAppleWasPoison && randomValue < poisonChance)
         {
             prefabToSpawn = poisonApplePrefab;
             lastAppleWasPoison = true;
+        }
+        else if (randomValue < poisonChance + goldChange)
+        {
+            prefabToSpawn = goldApplePrefab;
+            lastAppleWasPoison = false;
         }
         else
         {
