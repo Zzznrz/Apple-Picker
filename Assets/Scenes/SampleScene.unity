@@ -378,6 +378,7 @@ MonoBehaviour:
   basketBottomY: -14
   basketSpacingY: 2
   basketList: []
+  scoreCounter: {fileID: 794698929}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

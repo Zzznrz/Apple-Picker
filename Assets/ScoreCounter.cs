@@ -8,6 +8,8 @@ public class ScoreCounter : MonoBehaviour
     [Header("Dynamic")]
     public int score = 0;
 
+    public static int finalScore = 0;
+
     private TextMeshProUGUI uiText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

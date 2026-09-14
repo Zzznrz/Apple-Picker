@@ -12,6 +12,8 @@ public class ApplePicker : MonoBehaviour
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
 
+    public ScoreCounter scoreCounter;
+
     void Start()
     {
         basketList = new List<GameObject>();
@@ -53,7 +55,9 @@ public class ApplePicker : MonoBehaviour
         // If there are no Baskets left, restart the game
         if ( basketList.Count == 0)
         {
-            SceneManager.LoadScene( "SampleScene" );
+            ScoreCounter.finalScore = scoreCounter.score;
+            
+            SceneManager.LoadScene( "GameOverScene" );
         }
     }
 }
